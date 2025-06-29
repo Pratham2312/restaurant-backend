@@ -19,7 +19,9 @@ const orderSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-  }
+  },
+   source: { type: String, enum: ["customer", "captain"], default: "captain" }
+
 });
 
 module.exports = mongoose.model("Order", orderSchema);
